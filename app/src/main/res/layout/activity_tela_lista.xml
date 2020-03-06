@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TelaListaActivity">
+
+
+    <TextView
+        android:id="@+id/txtView"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_height="wrap_content"
+        android:text="@string/lista_de_musicas_boas"
+        android:textSize="18sp"
+        android:textColor="#000000"/>
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/txtView">
+    </Spinner>
+
+
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_marginTop="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_below="@+id/txtView"/>
+
+
+    <TextView
+        android:id="@+id/oqueAchou"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:text="@string/o_que_achou_das_musicas"
+        android:layout_below="@+id/listView"/>
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_below="@+id/oqueAchou"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/radioButton1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/timas" />
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/boas"/>
+
+        <RadioButton
+            android:id="@+id/radioButton3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ruins" />
+    </RadioGroup>
+
+
+
+    <Button
+        android:id="@+id/btnVoltar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/voltar"
+        android:layout_below="@+id/radioGroup"
+        android:layout_centerHorizontal="true"/>
+
+
+
+
+
+</RelativeLayout>

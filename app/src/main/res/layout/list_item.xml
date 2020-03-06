@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/imagem"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_margin="5dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/nirvana"/>
+
+    <TextView
+        android:id="@+id/nomeDaMusica"
+        android:layout_toEndOf="@+id/imagem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/nome_da_musica"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.SearchResult.Title" />
+
+    <TextView
+        android:id="@+id/artista"
+        android:layout_toEndOf="@+id/imagem"
+        android:layout_below="@+id/nomeDaMusica"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="@string/artista"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
+
+    <TextView
+        android:id="@+id/album"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Album"
+        android:layout_below="@+id/artista"
+        android:layout_toEndOf="@+id/imagem"/>
+
+    <TextView
+    android:id="@+id/duracao"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="3:50 minutos"
+    android:layout_below="@+id/album"
+    android:layout_toEndOf="@+id/imagem"/>
+
+</RelativeLayout>

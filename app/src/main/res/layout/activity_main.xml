@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@drawable/fundo">
+
+    <TextView
+        android:id="@+id/idText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/aperte_no_botao_para_ver_o_toast"
+        android:textStyle="bold"
+        android:textSize="20sp"/>
+
+
+
+
+    <EditText
+        android:id="@+id/edText"
+        android:layout_below="@+id/idText"
+        android:layout_centerHorizontal="true"
+        android:ems="15"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/digite_o_novo_texto">
+    </EditText>
+
+
+    <Button
+        android:id="@+id/btnConfimar"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/edText"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/aperte_aqui">
+    </Button>
+
+    <ToggleButton
+        android:id="@+id/btnToggle"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/btnConfimar"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </ToggleButton>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/editar"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_toStartOf="@+id/btnToggle"
+        android:layout_below="@+id/btnConfimar"
+        android:layout_marginTop="25dp"/>
+
+    <Button
+        android:id="@+id/btnTelaLista"
+        android:layout_below="@+id/btnToggle"
+        android:layout_marginTop="80dp"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tela_da_lista"/>
+
+
+
+
+    <AutoCompleteTextView
+        android:id="@+id/txtAutoComplete"
+        android:layout_below="@+id/btnTelaLista"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="13"
+        android:hint="@string/digite_seu_nome"/>
+
+    <TextView
+        android:id="@+id/tvSejaBemVindo"
+        android:layout_below="@+id/txtAutoComplete"
+        android:layout_width="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text=""/>
+
+    <Button
+        android:id="@+id/btnOk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ok"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/btnTelaLista"
+        android:layout_toEndOf="@+id/txtAutoComplete"/>
+
+
+
+</RelativeLayout>
