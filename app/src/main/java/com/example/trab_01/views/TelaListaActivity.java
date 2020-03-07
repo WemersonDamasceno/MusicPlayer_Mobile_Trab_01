@@ -159,7 +159,7 @@ public class TelaListaActivity extends AppCompatActivity {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(TelaListaActivity.this, "A lista sera exibida por " + list_of_order[position], Toast.LENGTH_SHORT).show();
+                //Toast.makeText(TelaListaActivity.this, "A lista sera exibida por " + list_of_order[position], Toast.LENGTH_SHORT).show();
                 switch (list_of_order[position]) {
                     case "Alfabetica":
                         Collections.sort(musicas, new Comparator() {

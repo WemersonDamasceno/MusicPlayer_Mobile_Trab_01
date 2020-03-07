@@ -70,12 +70,12 @@
     </RadioGroup>
 
 
-
     <Button
         android:id="@+id/btnVoltar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/voltar"
+        android:background="@drawable/button_redondo"
         android:layout_below="@+id/radioGroup"
         android:layout_centerHorizontal="true"/>
 
