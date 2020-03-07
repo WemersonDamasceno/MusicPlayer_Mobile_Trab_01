@@ -70,9 +70,7 @@
         android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/tela_da_lista"/>
-
-
+        android:text="@string/suas_musicas"/>
 
 
     <AutoCompleteTextView
@@ -106,17 +104,20 @@
 
 
     <TextView
+        android:id="@+id/txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/btnOk"
+        android:layout_below="@+id/tvSejaBemVindo"
         android:text="@string/saiba_mais_sobre_as_banda_de_rock"
         android:textSize="20sp"
         android:textStyle="bold"
         android:textColor="#000000"/>
     <Button
         android:id="@+id/btnBandas"
-        android:layout_below="@+id/btnOk"
-        android:layout_marginTop="20dp"
+        android:layout_below="@+id/txt"
+        android:layout_marginTop="10dp"
+        android:background="#2E7732"
+        android:layout_marginStart="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/bandas"/>
