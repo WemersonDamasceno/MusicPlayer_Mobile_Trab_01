@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fundo"
+    tools:context=".views.views_bandas.HistoricoGunsActivity">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="Guns N' Roses"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:textSize="30sp"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="350dp"
+        android:layout_gravity="center"
+        android:layout_height="250dp"
+        android:src="@drawable/htguns"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="BIOGRAFIA"
+        android:textSize="25sp"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:gravity="center"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:padding="10dp"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:text="O grupo foi formado no início de 1985 pelos membros do Hollywood Rose Axl Rose (vocais) e Izzy Stradlin (guitarra rítmica); e membros do L.A. Guns Tracii Guns (guitarra solo), Ole Beich (baixo) e Robbie Gardner (bateria). As dificuldades não durariam muito. Appetite for Destruction foi lançado em julho de 1987 e se tornou febre mundial"/>
+
+
+
+
+
+
+
+</LinearLayout>

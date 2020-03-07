@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <RelativeLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".views.MainActivity"
     android:background="@drawable/fundo">
+
+
+
 
     <TextView
         android:id="@+id/idText"
@@ -17,14 +19,14 @@
         android:textSize="20sp"/>
 
 
-
-
     <EditText
         android:id="@+id/edText"
         android:layout_below="@+id/idText"
         android:layout_centerHorizontal="true"
         android:ems="15"
         android:gravity="center"
+        android:background="#FAFAFA"
+        android:textStyle="bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="@string/digite_o_novo_texto">
@@ -77,9 +79,10 @@
         android:id="@+id/txtAutoComplete"
         android:layout_below="@+id/btnTelaLista"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
         android:layout_marginTop="20dp"
         android:ems="13"
+        android:background="#FAFAFA"
         android:hint="@string/digite_seu_nome"/>
 
     <TextView
@@ -100,6 +103,23 @@
         android:layout_marginTop="15dp"
         android:layout_below="@+id/btnTelaLista"
         android:layout_toEndOf="@+id/txtAutoComplete"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnOk"
+        android:text="@string/saiba_mais_sobre_as_banda_de_rock"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#000000"/>
+    <Button
+        android:id="@+id/btnBandas"
+        android:layout_below="@+id/btnOk"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/bandas"/>
 
 
 

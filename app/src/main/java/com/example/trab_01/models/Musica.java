@@ -1,4 +1,4 @@
-package com.example.trab_01;
+package com.example.trab_01.models;
 
 public class Musica {
     String nome;

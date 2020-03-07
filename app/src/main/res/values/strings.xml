@@ -15,4 +15,16 @@
     <string name="timas">Ótimas</string>
     <string name="boas">Boas</string>
     <string name="ruins">Ruins</string>
+    <string name="modo_noturno">Modo Noturno</string>
+    <string name="configura_es">Configurações</string>
+    <string name="sobre_n_s">Sobre nós</string>
+    <string name="sobre_nos">Sobre Nos</string>
+    <string name="somos_uma_equipe_formada_por_eu_e_deus_com_a_inten_o_de_mostrar_musicas_boas_para_as_demais_pessoas_para_deixar_o_seu_dia_mais_feliz">Somos uma equipe formada por \'eu e Deus\' com a intenção de mostrar musicas boas para as demais pessoas, para deixar o seu dia mais feliz.</string>
+    <string name="wemerson_monteiro_nufc_ndev_mobile">Wemerson Monteiro\n  UFC\n Dev. Mobile</string>
+    <string name="wemerson_damasceno_nufc_nfront_end_designer">Wemerson Damasceno UFC Front-end Designer</string>
+    <string name="bandas">Clique Aqui</string>
+    <string name="pearl_jam">Pearl Jam</string>
+    <string name="guns_n_roses">Guns n Roses</string>
+    <string name="nirvana">Nirvana</string>
+    <string name="saiba_mais_sobre_as_banda_de_rock">Saiba mais sobre as banda de rock</string>
 </resources>
