@@ -29,89 +29,83 @@
     <ListView
         android:id="@+id/listView"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="450dp"
         android:layout_below="@+id/txtView"
         android:layout_marginTop="20dp" >
 
     </ListView>
 
 
-
-    <TextView
-        android:id="@+id/tituloMusica"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/listView"
-        android:gravity="center"
-        android:textSize="20sp"
-        android:textColor="#000000"
-        android:textStyle="italic"
-        android:layout_marginTop="5dp"
-        android:text=""/>
-
-
-    <ProgressBar
-        android:id="@+id/progressBar"
-        android:layout_below="@+id/tituloMusica"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="300dp"
-        android:layout_centerHorizontal="true"
-        android:layout_height="wrap_content" />
-
-
-
-
     <LinearLayout
-        android:id="@+id/btnsPlayer"
-        android:layout_marginTop="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_below="@+id/progressBar"
-        android:background="#78A9D2DF"
-        android:layout_centerHorizontal="true"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:id="@+id/btnAnterior"
-            android:layout_width="80dp"
-            android:layout_height="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/listView"
+        android:background="#D463E2"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/tituloMusica"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textColor="#000000"
+            android:textStyle="bold"
             android:layout_marginTop="5dp"
-            android:background="@drawable/button_redondo"
-            android:src="@drawable/ic_anterior" />
+            android:text=""/>
 
-        <ImageView
-            android:id="@+id/btnPlay"
-            android:background="@drawable/button_redondo"
-            android:layout_width="80dp"
-            android:layout_margin="5dp"
-            android:layout_height="40dp"
-            android:src="@drawable/ic_play" />
-        <ImageView
-            android:id="@+id/btnPause"
-            android:background="@drawable/button_redondo"
-            android:layout_width="80dp"
-            android:layout_margin="5dp"
-            android:layout_height="40dp"
-            android:src="@drawable/ic_pause" />
 
-        <ImageView
-            android:id="@+id/btnProximo"
-            android:layout_width="80dp"
-            android:layout_marginTop="5dp"
-            android:layout_height="40dp"
-            android:background="@drawable/button_redondo"
-            android:src="@drawable/ic_proximo" />
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="300dp"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content" />
+
+
+
+
+        <LinearLayout
+            android:id="@+id/btnsPlayer"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/btnAnterior"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/button_redondo"
+                android:src="@drawable/ic_anterior" />
+
+            <ImageView
+                android:id="@+id/btnPlay"
+                android:background="@drawable/button_redondo"
+                android:layout_width="80dp"
+                android:layout_margin="5dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_play" />
+            <ImageView
+                android:id="@+id/btnPause"
+                android:background="@drawable/button_redondo"
+                android:layout_width="80dp"
+                android:layout_margin="5dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_pause" />
+
+            <ImageView
+                android:id="@+id/btnProximo"
+                android:layout_width="80dp"
+                android:layout_marginTop="5dp"
+                android:layout_height="40dp"
+                android:background="@drawable/button_redondo"
+                android:src="@drawable/ic_proximo" />
+        </LinearLayout>
+
+
     </LinearLayout>
 
-
-    <Button
-        android:id="@+id/btnVoltar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btnsPlayer"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/button_redondo"
-        android:text="@string/voltar" />
 
 </RelativeLayout>

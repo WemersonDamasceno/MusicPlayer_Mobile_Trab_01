@@ -40,7 +40,6 @@ import static com.example.trab_01.R.drawable.fundomusica;
 import static com.example.trab_01.R.drawable.sobrenos;
 
 public class TelaListaActivity extends AppCompatActivity {
-    Button btnVoltar;
     Spinner spinner;
     //botoes do player
     ImageView btnAnterior;
@@ -72,7 +71,6 @@ public class TelaListaActivity extends AppCompatActivity {
         btnPause = findViewById(R.id.btnPause);
         myMusic = MediaPlayer.create(TelaListaActivity.this, R.raw.silver);
         spinner = findViewById(R.id.spinner);
-        btnVoltar = findViewById(R.id.btnVoltar);
         tvTitulo = findViewById(R.id.tituloMusica);
 
         final ListView lista = (ListView) findViewById(R.id.listView);
@@ -295,14 +293,6 @@ public class TelaListaActivity extends AppCompatActivity {
         });
 
 
-        btnVoltar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), MainActivity.class);
-                startActivity(intent);
-            }
-        });
-
 
     }
 
@@ -322,7 +312,6 @@ public class TelaListaActivity extends AppCompatActivity {
     private void prog() {
         progressBar = findViewById(R.id.progressBar);
         int periodo = myMusic.getDuration()/100;
-        progressBar.setMax(periodo/5);
         int delay = 0;
         final TimerTask tt = new TimerTask() {
             @Override
