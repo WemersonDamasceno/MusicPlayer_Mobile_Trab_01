@@ -189,7 +189,6 @@ public class TelaListaActivity extends AppCompatActivity {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
                 myMusic.stop();
-                //aparecer um menu aqui
                 return true;
             }
         });
@@ -232,7 +231,12 @@ public class TelaListaActivity extends AppCompatActivity {
             }
         });
 
+        OrdenarSpinner(adapter);
 
+
+    }
+
+    private void OrdenarSpinner(final ArrayAdapter<Musica> adapter) {
         final String[] list_of_order = {
                 "Aleatório",
                 "Alfabetica",
@@ -291,7 +295,6 @@ public class TelaListaActivity extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> parent) {
             }
         });
-
 
 
     }
