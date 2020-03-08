@@ -1,17 +1,21 @@
 package com.example.trab_01.models;
 
+import com.example.trab_01.R;
+
 public class Musica {
     String nome;
     String artista;
     String album;
     String duracao;
+    public int id;
 
 
-    public Musica(String nome, String artista, String album, String duracao) {
+    public Musica(String nome, String artista, String album, String duracao, int save) {
         this.nome = nome;
         this.artista = artista;
         this.album = album;
         this.duracao = duracao;
+        id = save;
     }
 
     public String getDuracao() {

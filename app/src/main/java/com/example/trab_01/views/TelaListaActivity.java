@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.provider.MediaStore;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -14,11 +16,14 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.PopupMenu;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.trab_01.models.Musica;
@@ -28,6 +33,8 @@ import com.example.trab_01.R;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import static com.example.trab_01.R.drawable.fundomusica;
 import static com.example.trab_01.R.drawable.sobrenos;
@@ -35,6 +42,19 @@ import static com.example.trab_01.R.drawable.sobrenos;
 public class TelaListaActivity extends AppCompatActivity {
     Button btnVoltar;
     Spinner spinner;
+    //botoes do player
+    ImageView btnAnterior;
+    ImageView btnPlay;
+    ImageView btnProximo;
+    ImageView btnPause;
+    TextView tvTitulo;
+    Timer t;
+
+
+    ProgressBar progressBar;
+    int cont = 0;
+    int positionLastMusic = 0;
+
 
     MediaPlayer myMusic;
 
@@ -45,20 +65,26 @@ public class TelaListaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_lista);
 
-        myMusic = MediaPlayer.create(TelaListaActivity.this, R.raw.smells_trinta);
+        t = new Timer();
+        btnAnterior = findViewById(R.id.btnAnterior);
+        btnPlay = findViewById(R.id.btnPlay);
+        btnProximo = findViewById(R.id.btnProximo);
+        btnPause = findViewById(R.id.btnPause);
+        myMusic = MediaPlayer.create(TelaListaActivity.this, R.raw.silver);
         spinner = findViewById(R.id.spinner);
         btnVoltar = findViewById(R.id.btnVoltar);
+        tvTitulo = findViewById(R.id.tituloMusica);
 
         final ListView lista = (ListView) findViewById(R.id.listView);
-        Musica m1 = new Musica("Silver", "Nirvana", "Nevermind","2:11");
-        Musica m2 = new Musica("Come As You Are", "Nirvana", "Nevermind","3:45");
-        Musica m3 = new Musica("About A Girl", "Nirvana", "Nevermind","2:49");
-        Musica m4 = new Musica("Smells Like Teen Spirit", "Nirvana", "Nevermind","4:38");
-        Musica m5 = new Musica("Polly", "Nirvana", "Nevermind","2:51");
-        Musica m6 = new Musica("Dumb", "Nirvana", "Nevermind","2:34");
-        Musica m7 = new Musica("Heart Shaped Box", "Nirvana", "Nevermind","4:40");
-        Musica m8 = new Musica("Lithium", "Nirvana", "Nevermind","4:17");
-        Musica m9 = new Musica("All Apologies", "Nirvana", "Nevermind","3:38");
+        Musica m1 = new Musica("Silver", "Nirvana", "Nevermind", "2:11", R.raw.silver);
+        Musica m2 = new Musica("Come As You Are", "Nirvana", "Nevermind", "3:45", R.raw.come);
+        Musica m3 = new Musica("About A Girl", "Nirvana", "Nevermind", "2:49", R.raw.about);
+        Musica m4 = new Musica("Smells Like Teen Spirit", "Nirvana", "Nevermind", "4:38", R.raw.smells_trinta);
+        Musica m5 = new Musica("Polly", "Nirvana", "Nevermind", "2:51", R.raw.polly);
+        Musica m6 = new Musica("Dumb", "Nirvana", "Nevermind", "2:34", R.raw.dumb);
+        Musica m7 = new Musica("Heart Shaped Box", "Nirvana", "Nevermind", "4:40", R.raw.heart);
+        Musica m8 = new Musica("Lithium", "Nirvana", "Nevermind", "4:17", R.raw.lithium);
+        Musica m9 = new Musica("All Apologies", "Nirvana", "Nevermind", "3:38", R.raw.apollogies);
 
         if (musicas.size() == 0) {
             musicas.add(m1);
@@ -79,57 +105,92 @@ public class TelaListaActivity extends AppCompatActivity {
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                switch (musicas.get(position).getNome()){
+                switch (musicas.get(position).getNome()) {
                     case "Smells Like Teen Spirit":
                         myMusic.stop();
+                        positionLastMusic = position;
+                        tvTitulo.setText(musicas.get(positionLastMusic).getNome());
                         myMusic = MediaPlayer.create(TelaListaActivity.this, R.raw.smells_trinta);
                         myMusic.start();
+                        cont = 0;
+                        prog();
                         break;
                     case "Silver":
                         myMusic.stop();
+                        positionLastMusic = position;
+                        tvTitulo.setText(musicas.get(positionLastMusic).getNome());
                         myMusic = MediaPlayer.create(TelaListaActivity.this, R.raw.silver);
                         myMusic.start();
+                        cont = 0;
+                        prog();
                         break;
                     case "Come As You Are":
                         myMusic.stop();
+                        positionLastMusic = position;
+                        tvTitulo.setText(musicas.get(positionLastMusic).getNome());
                         myMusic = MediaPlayer.create(TelaListaActivity.this, R.raw.come);
                         myMusic.start();
+                        cont = 0;
+                        prog();
                         break;
                     case "About A Girl":
                         myMusic.stop();
+                        positionLastMusic = position;
+                        tvTitulo.setText(musicas.get(positionLastMusic).getNome());
                         myMusic = MediaPlayer.create(TelaListaActivity.this, R.raw.about);
                         myMusic.start();
+                        cont = 0;
+                        prog();
                         break;
                     case "Polly":
                         myMusic.stop();
+                        positionLastMusic = position;
                         myMusic = MediaPlayer.create(TelaListaActivity.this, R.raw.polly);
                         myMusic.start();
+                        cont = 0;
+                        prog();
+                        tvTitulo.setText(musicas.get(positionLastMusic).getNome());
                         break;
                     case "Dumb":
                         myMusic.stop();
+                        tvTitulo.setText(musicas.get(positionLastMusic).getNome());
+                        positionLastMusic = position;
                         myMusic = MediaPlayer.create(TelaListaActivity.this, R.raw.dumb);
                         myMusic.start();
+                        cont = 0;
+                        prog();
                         break;
                     case "Heart Shaped Box":
                         myMusic.stop();
+                        positionLastMusic = position;
+                        tvTitulo.setText(musicas.get(positionLastMusic).getNome());
                         myMusic = MediaPlayer.create(TelaListaActivity.this, R.raw.heart);
                         myMusic.start();
+                        cont = 0;
+                        prog();
                         break;
                     case "Lithium":
                         myMusic.stop();
+                        positionLastMusic = position;
+                        tvTitulo.setText(musicas.get(positionLastMusic).getNome());
                         myMusic = MediaPlayer.create(TelaListaActivity.this, R.raw.lithium);
                         myMusic.start();
+                        cont = 0;
+                        prog();
                         break;
                     case "All Apologies":
                         myMusic.stop();
+                        positionLastMusic = position;
+                        tvTitulo.setText(musicas.get(positionLastMusic).getNome());
                         myMusic = MediaPlayer.create(TelaListaActivity.this, R.raw.apollogies);
                         myMusic.start();
+                        cont = 0;
+                        prog();
                         break;
                     default:
                         Toast.makeText(TelaListaActivity.this, "", Toast.LENGTH_SHORT).show();
 
                 }
-
             }
         });
 
@@ -142,7 +203,44 @@ public class TelaListaActivity extends AppCompatActivity {
                 return true;
             }
         });
-
+        //player de musica
+        //botao do PLAY
+        btnPlay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                myMusic.start();
+            }
+        });
+        //botao do PAUSE
+        btnPause.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                myMusic.pause();
+            }
+        });
+        //passar para a proxima musica
+        btnProximo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                proximaMusica();
+            }
+        });
+        //voltar a musica anterior
+        btnAnterior.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cont = 0;
+                myMusic.stop();
+                if (positionLastMusic == 0) {
+                    cont = 0;
+                    positionLastMusic = musicas.size();
+                }
+                positionLastMusic--;
+                tvTitulo.setText(musicas.get(positionLastMusic).getNome());
+                myMusic = MediaPlayer.create(TelaListaActivity.this, musicas.get(positionLastMusic).id);
+                myMusic.start();
+            }
+        });
 
 
         final String[] list_of_order = {
@@ -159,7 +257,6 @@ public class TelaListaActivity extends AppCompatActivity {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                //Toast.makeText(TelaListaActivity.this, "A lista sera exibida por " + list_of_order[position], Toast.LENGTH_SHORT).show();
                 switch (list_of_order[position]) {
                     case "Alfabetica":
                         Collections.sort(musicas, new Comparator() {
@@ -171,6 +268,7 @@ public class TelaListaActivity extends AppCompatActivity {
                             }
                         });
                         adapter.notifyDataSetChanged(); //atualizar a lista
+                        positionLastMusic = position;
                         break;
                     case "Album":
                         Collections.sort(musicas, new Comparator() {
@@ -182,6 +280,7 @@ public class TelaListaActivity extends AppCompatActivity {
                             }
                         });
                         adapter.notifyDataSetChanged(); //atualizar a lista
+                        positionLastMusic = position;
                         break;
                     case "Duração":
                         Collections.sort(musicas, new Comparator() {
@@ -193,16 +292,15 @@ public class TelaListaActivity extends AppCompatActivity {
                             }
                         });
                         adapter.notifyDataSetChanged(); //atualizar a lista
+                        positionLastMusic = position;
                         break;
                 }
             }
+
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
             }
         });
-
-
-
 
 
         btnVoltar.setOnClickListener(new View.OnClickListener() {
@@ -214,14 +312,37 @@ public class TelaListaActivity extends AppCompatActivity {
         });
 
 
-
-
-
-
-
-
     }
 
+    private void proximaMusica() {
+        myMusic.stop();
+        cont = 0;
+        positionLastMusic++;
+        if (positionLastMusic == musicas.size()) {
+            positionLastMusic = 0;
+            cont = 0;
+        }
+        tvTitulo.setText(musicas.get(positionLastMusic).getNome());
+        myMusic = MediaPlayer.create(TelaListaActivity.this, musicas.get(positionLastMusic).id);
+        myMusic.start();
+    }
+
+    private void prog() {
+        progressBar = findViewById(R.id.progressBar);
+
+        final TimerTask tt = new TimerTask() {
+            @Override
+            public void run() {
+                progressBar.setProgress(cont);
+                cont++;
+                if (cont == 100) {
+                    myMusic.stop();
+                    t = new Timer();
+                }
+            }
+        };
+        t.schedule(tt, 0, progressBar.getMax());
+    }
 
 
     @Override
@@ -233,16 +354,15 @@ public class TelaListaActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == R.id.sobreNos){
+        if (item.getItemId() == R.id.sobreNos) {
             Toast.makeText(this, "Sobre Nos", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(TelaListaActivity.this,SobreNosActivity.class);
+            Intent intent = new Intent(TelaListaActivity.this, SobreNosActivity.class);
             startActivity(intent);
-        }else if(item.getItemId() == R.id.modoEscuro){
+        } else if (item.getItemId() == R.id.modoEscuro) {
             Toast.makeText(this, "Modo Escuro Ativado", Toast.LENGTH_SHORT).show();
             RelativeLayout relativeLayout = findViewById(R.id.layoutLista);
             relativeLayout.setBackgroundColor(R.drawable.fundomusica);
         }
-
 
 
         return super.onOptionsItemSelected(item);
