@@ -31,7 +31,7 @@
         android:layout_width="match_parent"
         android:layout_height="400dp"
         android:layout_below="@+id/txtView"
-        android:layout_marginTop="25dp" >
+        android:layout_marginTop="20dp" >
 
     </ListView>
 
@@ -46,7 +46,7 @@
         android:textSize="20sp"
         android:textColor="#000000"
         android:textStyle="italic"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:text=""/>
 
 
@@ -56,7 +56,6 @@
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="300dp"
         android:layout_centerHorizontal="true"
-        android:max="100"
         android:layout_height="wrap_content" />
 
 
@@ -64,7 +63,7 @@
 
     <LinearLayout
         android:id="@+id/btnsPlayer"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_below="@+id/progressBar"
@@ -111,7 +110,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/btnsPlayer"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/button_redondo"
         android:text="@string/voltar" />
 
