@@ -113,7 +113,6 @@ public class TelaListaActivity extends AppCompatActivity {
                         myMusic = MediaPlayer.create(TelaListaActivity.this, R.raw.smells_trinta);
                         myMusic.start();
                         cont = 0;
-                        prog();
                         break;
                     case "Silver":
                         myMusic.stop();
@@ -122,7 +121,6 @@ public class TelaListaActivity extends AppCompatActivity {
                         myMusic = MediaPlayer.create(TelaListaActivity.this, R.raw.silver);
                         myMusic.start();
                         cont = 0;
-                        prog();
                         break;
                     case "Come As You Are":
                         myMusic.stop();
@@ -131,7 +129,6 @@ public class TelaListaActivity extends AppCompatActivity {
                         myMusic = MediaPlayer.create(TelaListaActivity.this, R.raw.come);
                         myMusic.start();
                         cont = 0;
-                        prog();
                         break;
                     case "About A Girl":
                         myMusic.stop();
@@ -140,7 +137,6 @@ public class TelaListaActivity extends AppCompatActivity {
                         myMusic = MediaPlayer.create(TelaListaActivity.this, R.raw.about);
                         myMusic.start();
                         cont = 0;
-                        prog();
                         break;
                     case "Polly":
                         myMusic.stop();
@@ -148,17 +144,15 @@ public class TelaListaActivity extends AppCompatActivity {
                         myMusic = MediaPlayer.create(TelaListaActivity.this, R.raw.polly);
                         myMusic.start();
                         cont = 0;
-                        prog();
                         tvTitulo.setText(musicas.get(positionLastMusic).getNome());
                         break;
                     case "Dumb":
                         myMusic.stop();
-                        tvTitulo.setText(musicas.get(positionLastMusic).getNome());
                         positionLastMusic = position;
                         myMusic = MediaPlayer.create(TelaListaActivity.this, R.raw.dumb);
                         myMusic.start();
                         cont = 0;
-                        prog();
+                        tvTitulo.setText(musicas.get(positionLastMusic).getNome());
                         break;
                     case "Heart Shaped Box":
                         myMusic.stop();
@@ -167,7 +161,6 @@ public class TelaListaActivity extends AppCompatActivity {
                         myMusic = MediaPlayer.create(TelaListaActivity.this, R.raw.heart);
                         myMusic.start();
                         cont = 0;
-                        prog();
                         break;
                     case "Lithium":
                         myMusic.stop();
@@ -176,7 +169,6 @@ public class TelaListaActivity extends AppCompatActivity {
                         myMusic = MediaPlayer.create(TelaListaActivity.this, R.raw.lithium);
                         myMusic.start();
                         cont = 0;
-                        prog();
                         break;
                     case "All Apologies":
                         myMusic.stop();
@@ -185,7 +177,6 @@ public class TelaListaActivity extends AppCompatActivity {
                         myMusic = MediaPlayer.create(TelaListaActivity.this, R.raw.apollogies);
                         myMusic.start();
                         cont = 0;
-                        prog();
                         break;
                     default:
                         Toast.makeText(TelaListaActivity.this, "", Toast.LENGTH_SHORT).show();
@@ -193,7 +184,7 @@ public class TelaListaActivity extends AppCompatActivity {
                 }
             }
         });
-
+        prog();
         //ver as opcoes da musica
         lista.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
@@ -215,7 +206,7 @@ public class TelaListaActivity extends AppCompatActivity {
         btnPause.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                myMusic.pause();
+                myMusic.stop();
             }
         });
         //passar para a proxima musica
@@ -329,7 +320,7 @@ public class TelaListaActivity extends AppCompatActivity {
 
     private void prog() {
         progressBar = findViewById(R.id.progressBar);
-
+        final int d = myMusic.getDuration()/100;
         final TimerTask tt = new TimerTask() {
             @Override
             public void run() {
@@ -341,7 +332,8 @@ public class TelaListaActivity extends AppCompatActivity {
                 }
             }
         };
-        t.schedule(tt, 0, progressBar.getMax());
+
+        t.schedule(tt, 0, d);
     }
 
 
