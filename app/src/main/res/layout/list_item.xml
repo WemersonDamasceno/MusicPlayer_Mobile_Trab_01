@@ -2,21 +2,26 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E2A7EE">
+    android:background="#7580DA">
 
 
-    <ImageView
+
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imagem"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:layout_margin="5dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/nirvana"/>
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/btn_foto_arredondada"
+        android:src="@drawable/nirvana" />
+
+
 
     <TextView
         android:id="@+id/nomeDaMusica"
         android:layout_toEndOf="@+id/imagem"
         android:layout_width="wrap_content"
+        android:textColor="#FFFFFF"
         android:layout_height="wrap_content"
         android:text="@string/nome_da_musica"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.SearchResult.Title" />
@@ -25,6 +30,7 @@
         android:id="@+id/artista"
         android:layout_toEndOf="@+id/imagem"
         android:layout_below="@+id/nomeDaMusica"
+        android:textColor="#FFFFFF"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="bold"
@@ -34,17 +40,19 @@
     <TextView
         android:id="@+id/album"
         android:layout_width="wrap_content"
+        android:textColor="#FFFFFF"
         android:layout_height="wrap_content"
         android:text="Album"
         android:layout_below="@+id/artista"
         android:layout_toEndOf="@+id/imagem"/>
 
     <TextView
-    android:id="@+id/duracao"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="3:50 minutos"
-    android:layout_below="@+id/album"
-    android:layout_toEndOf="@+id/imagem"/>
+        android:id="@+id/duracao"
+        android:layout_width="wrap_content"
+        android:textColor="#FFFFFF"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_below="@+id/album"
+        android:layout_toEndOf="@+id/imagem"/>
 
 </RelativeLayout>

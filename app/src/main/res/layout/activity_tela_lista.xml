@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".views.TelaListaActivity"
-    android:background="#DC4BEC">
+    android:background="#4B5EE0">
 
 
 
@@ -41,7 +41,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/listView"
-        android:background="#DC4BEC"
+        android:background="#4B5EE0"
         android:orientation="vertical">
         <TextView
             android:id="@+id/tituloMusica"
