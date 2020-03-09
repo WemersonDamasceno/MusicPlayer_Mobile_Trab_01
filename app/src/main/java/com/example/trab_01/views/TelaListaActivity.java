@@ -9,7 +9,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
@@ -40,6 +42,9 @@ public class TelaListaActivity extends AppCompatActivity {
     TextView tvTitulo;
     Timer t;
 
+    LinearLayout mediaPlayer;
+    ImageView btnVoltarMedia;
+
     ProgressBar progressBar;
     int cont = 0;
     int positionLastMusic = 0;
@@ -51,6 +56,8 @@ public class TelaListaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_lista);
 
+        mediaPlayer = findViewById(R.id.mediaPlayer);
+        btnVoltarMedia = findViewById(R.id.btnVoltar);
 
         t = new Timer();
         btnAnterior = findViewById(R.id.btnAnterior);
@@ -89,6 +96,18 @@ public class TelaListaActivity extends AppCompatActivity {
         final ArrayAdapter<Musica> adapter = new MusicaAdapter(TelaListaActivity.this, musicas);
         lista.setAdapter(adapter);
 
+        btnVoltarMedia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mediaPlayer.setVisibility(View.INVISIBLE);
+            }
+        });
+        tvTitulo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mediaPlayer.setVisibility(View.VISIBLE);
+            }
+        });
 
         //colocar a musica pra tocar
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -100,6 +119,7 @@ public class TelaListaActivity extends AppCompatActivity {
                         positionLastMusic = position;
                         tvTitulo.setText(musicas.get(positionLastMusic).getNome() + "\n" + musicas.get(positionLastMusic).getArtista());
                         myMusic = MediaPlayer.create(TelaListaActivity.this, R.raw.smells_trinta);
+                        mediaPlayer.setVisibility(View.VISIBLE);
                         myMusic.start();
                         cont = 0;
                         break;
@@ -108,6 +128,7 @@ public class TelaListaActivity extends AppCompatActivity {
                         positionLastMusic = position;
                         tvTitulo.setText(musicas.get(positionLastMusic).getNome() + "\n" + musicas.get(positionLastMusic).getArtista());
                         myMusic = MediaPlayer.create(TelaListaActivity.this, R.raw.silver);
+                        mediaPlayer.setVisibility(View.VISIBLE);
                         myMusic.start();
                         cont = 0;
                         break;
@@ -116,6 +137,7 @@ public class TelaListaActivity extends AppCompatActivity {
                         positionLastMusic = position;
                         tvTitulo.setText(musicas.get(positionLastMusic).getNome() + "\n" + musicas.get(positionLastMusic).getArtista());
                         myMusic = MediaPlayer.create(TelaListaActivity.this, R.raw.come);
+                        mediaPlayer.setVisibility(View.VISIBLE);
                         myMusic.start();
                         cont = 0;
                         break;
@@ -124,6 +146,7 @@ public class TelaListaActivity extends AppCompatActivity {
                         positionLastMusic = position;
                         tvTitulo.setText(musicas.get(positionLastMusic).getNome() + "\n" + musicas.get(positionLastMusic).getArtista());
                         myMusic = MediaPlayer.create(TelaListaActivity.this, R.raw.about);
+                        mediaPlayer.setVisibility(View.VISIBLE);
                         myMusic.start();
                         cont = 0;
                         break;
@@ -132,6 +155,7 @@ public class TelaListaActivity extends AppCompatActivity {
                         positionLastMusic = position;
                         tvTitulo.setText(musicas.get(positionLastMusic).getNome() + "\n" + musicas.get(positionLastMusic).getArtista());
                         myMusic = MediaPlayer.create(TelaListaActivity.this, R.raw.polly);
+                        mediaPlayer.setVisibility(View.VISIBLE);
                         myMusic.start();
                         cont = 0;
                         break;
@@ -140,6 +164,7 @@ public class TelaListaActivity extends AppCompatActivity {
                         positionLastMusic = position;
                         tvTitulo.setText(musicas.get(positionLastMusic).getNome() + "\n" + musicas.get(positionLastMusic).getArtista());
                         myMusic = MediaPlayer.create(TelaListaActivity.this, R.raw.dumb);
+                        mediaPlayer.setVisibility(View.VISIBLE);
                         myMusic.start();
                         cont = 0;
                         break;
@@ -148,6 +173,7 @@ public class TelaListaActivity extends AppCompatActivity {
                         positionLastMusic = position;
                         tvTitulo.setText(musicas.get(positionLastMusic).getNome() + "\n" + musicas.get(positionLastMusic).getArtista());
                         myMusic = MediaPlayer.create(TelaListaActivity.this, R.raw.heart);
+                        mediaPlayer.setVisibility(View.VISIBLE);
                         myMusic.start();
                         cont = 0;
                         break;
@@ -155,6 +181,7 @@ public class TelaListaActivity extends AppCompatActivity {
                         myMusic.stop();
                         positionLastMusic = position;
                         tvTitulo.setText(musicas.get(positionLastMusic).getNome() + "\n" + musicas.get(positionLastMusic).getArtista());
+                        mediaPlayer.setVisibility(View.VISIBLE);
                         myMusic = MediaPlayer.create(TelaListaActivity.this, R.raw.lithium);
                         myMusic.start();
                         cont = 0;
@@ -163,6 +190,7 @@ public class TelaListaActivity extends AppCompatActivity {
                         myMusic.stop();
                         positionLastMusic = position;
                         tvTitulo.setText(musicas.get(positionLastMusic).getNome() + "\n" + musicas.get(positionLastMusic).getArtista());
+                        mediaPlayer.setVisibility(View.VISIBLE);
                         myMusic = MediaPlayer.create(TelaListaActivity.this, R.raw.apollogies);
                         myMusic.start();
                         cont = 0;

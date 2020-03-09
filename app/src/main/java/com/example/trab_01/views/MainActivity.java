@@ -1,8 +1,9 @@
 package com.example.trab_01.views;
 
-import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -22,6 +23,7 @@ import android.widget.ToggleButton;
 import android.widget.Toolbar;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.trab_01.R;
@@ -48,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-
         ediText = findViewById(R.id.edText);
         btnBandas = findViewById(R.id.btnBandas);
         textView = findViewById(R.id.idText);
@@ -59,6 +60,9 @@ public class MainActivity extends AppCompatActivity {
         btnOk = findViewById(R.id.btnOk);
         txtAutoComplete = findViewById(R.id.txtAutoComplete);
 
+
+        //ActionBar bar = getSupportActionBar();
+        //bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#FF6D6A6A")));
 
         btnConfirmar.setOnClickListener(new View.OnClickListener() {
             @Override
