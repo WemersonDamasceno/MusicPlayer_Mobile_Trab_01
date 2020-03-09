@@ -4,14 +4,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".views.MainActivity"
     android:background="@drawable/fundo">
+
+
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#FF6D6A6A"
+        app:tabTextColor="#FFFFFF">
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/principal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/principal" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/suas_musicas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/suas_musicas" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/sobre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sobre_nos"/>
+    </com.google.android.material.tabs.TabLayout>
 
 
     <TextView
         android:id="@+id/idText"
         android:layout_centerHorizontal="true"
         android:textColor="#FFFFFF"
+        android:layout_below="@+id/tabLayout"
+        android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/aperte_no_botao_para_ver_o_toast"
@@ -70,7 +101,7 @@
     <Button
         android:id="@+id/btnTelaLista"
         android:layout_below="@+id/btnToggle"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="10dp"
         android:ems="9"
         android:layout_centerHorizontal="true"
         android:background="@drawable/button_redondo"
@@ -156,7 +187,7 @@
             android:id="@+id/radioButton1"
             android:textColor="#FFFFFF"
             android:layout_width="match_parent"
-            android:background="#999595"
+            android:background="#6D6A6A"
             android:layout_height="wrap_content"
             android:text="@string/timas" />
 
@@ -164,7 +195,7 @@
             android:id="@+id/radioButton2"
             android:textColor="#FFFFFF"
             android:layout_width="match_parent"
-            android:background="#999595"
+            android:background="#FF6D6A6A"
             android:layout_marginTop="5dp"
             android:layout_height="wrap_content"
             android:text="@string/boas"/>
@@ -174,7 +205,7 @@
             android:textColor="#FFFFFF"
             android:layout_marginTop="5dp"
             android:layout_width="match_parent"
-            android:background="#999595"
+            android:background="#FF6D6A6A"
             android:layout_height="wrap_content"
             android:text="@string/ruins" />
     </RadioGroup>

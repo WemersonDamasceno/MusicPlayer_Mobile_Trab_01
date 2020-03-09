@@ -1,28 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/layoutLista"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".views.TelaListaActivity"
-    android:background="#4B5EE0">
+    android:background="#232324">
 
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#FF6D6A6A"
+        app:tabTextColor="#FFFFFF">
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/principal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/principal" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/suas_musicas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/suas_musicas" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/sobre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sobre_nos"/>
+    </com.google.android.material.tabs.TabLayout>
 
 
 
     <TextView
         android:id="@+id/txtView"
+        android:layout_below="@+id/tabLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:text="@string/lista_de_musicas_boas"
         android:textColor="#FFFFFF"
         android:textSize="18sp" />
 
     <Spinner
         android:id="@+id/spinner"
+        android:background="#7E3D3D3F"
+        android:layout_below="@+id/tabLayout"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_toEndOf="@+id/txtView">
     </Spinner>
 
@@ -30,9 +59,9 @@
     <ListView
         android:id="@+id/listView"
         android:layout_width="match_parent"
-        android:layout_height="450dp"
+        android:layout_height="420dp"
         android:layout_below="@+id/txtView"
-        android:layout_marginTop="20dp" >
+        android:layout_marginTop="10dp" >
     </ListView>
 
 
@@ -41,14 +70,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/listView"
-        android:background="#4B5EE0"
+        android:background="#232324"
         android:orientation="vertical">
         <TextView
             android:id="@+id/tituloMusica"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:textSize="20sp"
+            android:textSize="15sp"
             android:textColor="#FFFFFF"
             android:textStyle="bold"
             android:layout_marginTop="5dp"

@@ -11,37 +11,38 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".views.views_bandas.HistoricoPearlActivity">
+        <activity android:name=".views.views_bandas.HistoricoPearlActivity" android:label="Sobre Pearl Jam">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".views.MainActivity" />
         </activity>
-        <activity android:name=".views.views_bandas.HistoricoGunsActivity">
+        <activity android:name=".views.views_bandas.HistoricoGunsActivity" android:label="Sobre Guns N' Roses">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".views.MainActivity" />
         </activity>
-        <activity android:name=".views.views_bandas.HistoricoNirvanaActivity">
+        <activity android:name=".views.views_bandas.HistoricoNirvanaActivity" android:label="Sobre Nirvana">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".views.MainActivity" />
         </activity>
-        <activity android:name=".views.SobreNosActivity">
+        <activity android:name=".views.SobreNosActivity" android:label="Sobre Nos">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".views.TelaListaActivity" />
         </activity>
         <activity
-            android:name=".views.TelaListaActivity"
-            android:label="Lista de Musicas">
+            android:name=".views.TelaListaActivity" android:label="Lista de Musicas">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".views.MainActivity" />
         </activity>
-        <activity android:name=".views.MainActivity">
+        <activity
+            android:name=".views.MainActivity"
+            android:label="MusicList">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"  />
             </intent-filter>
         </activity>
     </application>

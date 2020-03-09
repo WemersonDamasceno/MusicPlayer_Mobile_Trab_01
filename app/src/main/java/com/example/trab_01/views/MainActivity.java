@@ -1,8 +1,11 @@
 package com.example.trab_01.views;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -11,9 +14,15 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.PopupMenu;
+import android.widget.RelativeLayout;
+import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
+import android.widget.Toolbar;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.trab_01.R;
 import com.example.trab_01.views.views_bandas.HistoricoGunsActivity;
@@ -21,7 +30,7 @@ import com.example.trab_01.views.views_bandas.HistoricoNirvanaActivity;
 import com.example.trab_01.views.views_bandas.HistoricoPearlActivity;
 
 
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
     Button btnConfirmar;
     EditText ediText;
     TextView textView;
@@ -31,10 +40,14 @@ public class MainActivity extends Activity {
     Button btnOk;
     AutoCompleteTextView txtAutoComplete;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
 
         ediText = findViewById(R.id.edText);
         btnBandas = findViewById(R.id.btnBandas);
@@ -135,6 +148,29 @@ public class MainActivity extends Activity {
         txtAutoComplete.setAdapter(adapter);
     }
 
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.sobreNos) {
+            Toast.makeText(this, "Sobre Nos", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(MainActivity.this, SobreNosActivity.class);
+            startActivity(intent);
+        } else if (item.getItemId() == R.id.modoEscuro) {
+            Toast.makeText(this, "Modo Escuro Ativado", Toast.LENGTH_SHORT).show();
+            RelativeLayout relativeLayout = findViewById(R.id.layoutLista);
+            relativeLayout.setBackgroundColor(R.drawable.fundomusica);
+        }
+
+
+        return super.onOptionsItemSelected(item);
+    }
 
 
 

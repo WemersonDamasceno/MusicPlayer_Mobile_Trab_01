@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Trab_01</string>
+    <string name="app_name">MusicList</string>
     <string name="aperte_aqui">Aperte Aqui</string>
     <string name="digite_o_novo_texto">Digite um novo titulo</string>
     <string name="lista_de_musicas_boas">Melhores musicas Nirvana</string>
@@ -26,5 +26,7 @@
     <string name="guns_n_roses">Guns n Roses</string>
     <string name="nirvana">Nirvana</string>
     <string name="saiba_mais_sobre_as_banda_de_rock">Saiba mais sobre as banda de rock</string>
-    <string name="suas_musicas">Suas Musicas</string>
+    <string name="suas_musicas">Musicas</string>
+    <string name="principal">Principal</string>
+    <string name="deus_criador_nuniverso_nthe_best_support">Deus Criador Universo The Best Support</string>
 </resources>
