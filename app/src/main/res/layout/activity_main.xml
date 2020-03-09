@@ -11,7 +11,7 @@
     <TextView
         android:id="@+id/idText"
         android:layout_centerHorizontal="true"
-        android:textColor="#000000"
+        android:textColor="#FFFFFF"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/aperte_no_botao_para_ver_o_toast"
@@ -61,7 +61,7 @@
         android:layout_height="wrap_content"
         android:text="@string/editar"
         android:textSize="25sp"
-        android:textColor="#000000"
+        android:textColor="#FFFFFF"
         android:textStyle="bold"
         android:layout_toStartOf="@+id/btnToggle"
         android:layout_below="@+id/btnConfimar"
@@ -95,6 +95,7 @@
         android:layout_width="wrap_content"
         android:textSize="20sp"
         android:textStyle="bold"
+        android:textColor="#FFFFFF"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:text=""/>
@@ -121,7 +122,7 @@
         android:text="@string/saiba_mais_sobre_as_banda_de_rock"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:textColor="#000000"/>
+        android:textColor="#FFFFFF"/>
     <Button
         android:id="@+id/btnBandas"
         android:layout_below="@+id/txt"
@@ -133,6 +134,50 @@
         android:layout_height="wrap_content"
         android:text="@string/bandas"/>
 
+
+    <TextView
+        android:id="@+id/oqueAchou"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:text="@string/o_que_achou_das_musicas"
+        android:layout_below="@+id/btnBandas"/>
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_below="@+id/oqueAchou"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/radioButton1"
+            android:textColor="#FFFFFF"
+            android:layout_width="match_parent"
+            android:background="#999595"
+            android:layout_height="wrap_content"
+            android:text="@string/timas" />
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:textColor="#FFFFFF"
+            android:layout_width="match_parent"
+            android:background="#999595"
+            android:layout_marginTop="5dp"
+            android:layout_height="wrap_content"
+            android:text="@string/boas"/>
+
+        <RadioButton
+            android:id="@+id/radioButton3"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:background="#999595"
+            android:layout_height="wrap_content"
+            android:text="@string/ruins" />
+    </RadioGroup>
 
 
 </RelativeLayout>
