@@ -138,34 +138,7 @@
     </LinearLayout>
 
 
-    <LinearLayout
-        android:id="@+id/mediaPlayer"
-        android:layout_width="match_parent"
-        android:layout_height="460dp"
-        android:layout_marginTop="40dp"
-        android:background="@drawable/fundo"
-        android:orientation="vertical"
-        android:visibility="invisible">
-
-
-        <ImageView
-            android:id="@+id/btnVoltar"
-            android:layout_marginTop="10dp"
-            android:layout_width="40dp"
-            android:layout_height="30dp"
-            android:src="@drawable/ic_seta_back"/>
-
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/imgMedia"
-            android:layout_width="300dp"
-            android:layout_height="200dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="50dp"
-            android:layout_marginEnd="10dp"
-            android:background="@drawable/btn_foto_arredondada"
-            android:src="@drawable/nirvana" />
-
-    </LinearLayout>
+    <include layout="@layout/media_player"/>
 
 
 

@@ -1,5 +1,6 @@
 package com.example.trab_01.views;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
@@ -103,9 +104,10 @@ public class MainActivity extends AppCompatActivity {
         autoComplete();
         if (txtAutoComplete.getText() != null) {
             btnOk.setOnClickListener(new View.OnClickListener() {
+                @SuppressLint("SetTextI18n")
                 @Override
                 public void onClick(View v) {
-                    tvNome.setText("Seja Bem Vindo " + txtAutoComplete.getText() + "!");
+                    tvNome.setText("Seja Bem Vindo "+txtAutoComplete.getText() + "!");
                 }
             });
         }
@@ -141,25 +143,19 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-
     private void autoComplete() {
         String lista[] = {"Ana", "Matheus", "Vinicius", "Wemerson", "Marcio",
                 "Marcelo", "Bruna", "Babu", "Arthur", "Maxwell", "Naruto"};
-
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, lista);
-
         txtAutoComplete.setThreshold(1);
         txtAutoComplete.setAdapter(adapter);
     }
-
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu, menu);
         return true;
     }
-
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.sobreNos) {
@@ -171,8 +167,6 @@ public class MainActivity extends AppCompatActivity {
             RelativeLayout relativeLayout = findViewById(R.id.layoutLista);
             relativeLayout.setBackgroundColor(R.drawable.fundomusica);
         }
-
-
         return super.onOptionsItemSelected(item);
     }
 

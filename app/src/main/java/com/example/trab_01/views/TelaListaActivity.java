@@ -95,20 +95,20 @@ public class TelaListaActivity extends AppCompatActivity {
         //Picasso.get().load(R.drawable.teste).into(teste);
         final ArrayAdapter<Musica> adapter = new MusicaAdapter(TelaListaActivity.this, musicas);
         lista.setAdapter(adapter);
-
+        //voltar pra lista
         btnVoltarMedia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mediaPlayer.setVisibility(View.INVISIBLE);
             }
         });
+        //mostrar mediaplayer
         tvTitulo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mediaPlayer.setVisibility(View.VISIBLE);
             }
         });
-
         //colocar a musica pra tocar
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -202,7 +202,6 @@ public class TelaListaActivity extends AppCompatActivity {
                 }
             }
         });
-        prog();
         //ver as opcoes da musica
         lista.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
@@ -213,7 +212,7 @@ public class TelaListaActivity extends AppCompatActivity {
         });
 
         playerMusica();
-
+        prog();
         OrdenarSpinner(adapter);
 
 
@@ -262,7 +261,6 @@ public class TelaListaActivity extends AppCompatActivity {
             }
         });
     }
-
     private void OrdenarSpinner(final ArrayAdapter<Musica> adapter) {
         final String[] list_of_order = {
                 "Aleatório",
@@ -325,7 +323,6 @@ public class TelaListaActivity extends AppCompatActivity {
 
 
     }
-
     private void proximaMusica() {
         myMusic.stop();
         cont = 0;
@@ -338,7 +335,6 @@ public class TelaListaActivity extends AppCompatActivity {
         myMusic = MediaPlayer.create(TelaListaActivity.this, musicas.get(positionLastMusic).id);
         myMusic.start();
     }
-
     private void prog() {
         progressBar = findViewById(R.id.progressBar);
         int periodo = myMusic.getDuration() / 170;
@@ -357,15 +353,12 @@ public class TelaListaActivity extends AppCompatActivity {
         };
         t.schedule(tt, delay, periodo);
     }
-
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu, menu);
         return true;
     }
-
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.sobreNos) {
