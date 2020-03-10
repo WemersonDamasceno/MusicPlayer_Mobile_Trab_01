@@ -14,9 +14,9 @@
     <string name="timas">Ótimas</string>
     <string name="boas">Boas</string>
     <string name="ruins">Ruins</string>
-    <string name="modo_noturno">Modo Noturno</string>
-    <string name="configura_es">Configurações</string>
-    <string name="sobre_n_s">Sobre nós</string>
+    <string name="modo_noturno">Modo Claro</string>
+    <string name="vWeb">Versão Web</string>
+    <string name="configuracoes">Configurações</string>
     <string name="sobre_nos">Sobre Nos</string>
     <string name="somos_uma_equipe_formada_por_eu_e_deus_com_a_inten_o_de_mostrar_musicas_boas_para_as_demais_pessoas_para_deixar_o_seu_dia_mais_feliz">Somos uma equipe formada por \'eu e Deus\' com a intenção de mostrar musicas boas para as demais pessoas, para deixar o seu dia mais feliz.</string>
     <string name="wemerson_monteiro_nufc_ndev_mobile">Wemerson Monteiro\n  UFC\n Dev. Mobile</string>
@@ -29,4 +29,5 @@
     <string name="suas_musicas">Musicas</string>
     <string name="principal">Principal</string>
     <string name="deus_criador_nuniverso_nthe_best_support">Deus Criador Universo The Best Support</string>
+    <string name="feedback">Feedback</string>
 </resources>

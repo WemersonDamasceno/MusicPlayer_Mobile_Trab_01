@@ -26,24 +26,22 @@ import android.widget.Toolbar;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
 
 import com.example.trab_01.R;
+import com.example.trab_01.adapters.ViewPagerAdapter;
+import com.example.trab_01.fragments.SobreNosFragment;
 import com.example.trab_01.views.views_bandas.HistoricoGunsActivity;
 import com.example.trab_01.views.views_bandas.HistoricoNirvanaActivity;
 import com.example.trab_01.views.views_bandas.HistoricoPearlActivity;
+import com.google.android.material.tabs.TabLayout;
 
 
 public class MainActivity extends AppCompatActivity {
-    Button btnConfirmar;
-    EditText ediText;
-    TextView textView;
-    Button btnTelaLista;
-    TextView tvNome;
-    Button btnBandas;
-    Button btnOk;
-    AutoCompleteTextView txtAutoComplete;
 
 
+    ViewPager viewPager;
+    ViewPagerAdapter viewPagerAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,125 +49,39 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        ediText = findViewById(R.id.edText);
-        btnBandas = findViewById(R.id.btnBandas);
-        textView = findViewById(R.id.idText);
-        btnConfirmar = findViewById(R.id.btnConfimar);
-        btnTelaLista = findViewById(R.id.btnTelaLista);
-        tvNome = findViewById(R.id.tvSejaBemVindo);
-        final ToggleButton toggle = findViewById(R.id.btnToggle);
-        btnOk = findViewById(R.id.btnOk);
-        txtAutoComplete = findViewById(R.id.txtAutoComplete);
+        viewPager = findViewById(R.id.pager);
+        viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
+        viewPager.setAdapter(viewPagerAdapter);
 
 
-        //ActionBar bar = getSupportActionBar();
-        //bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#FF6D6A6A")));
+        //teste para mudar a cor do actionBar
+        ActionBar bar = getSupportActionBar();
+        bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#232324")));
 
-        btnConfirmar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (toggle.isChecked()) {
-                    if (ediText.getText() == null || ediText.length() == 0) {
-                        Toast.makeText(MainActivity.this, "Insira um texto", Toast.LENGTH_SHORT).show();
-                    } else {
-                        textView.setText(ediText.getText());
-                    }
-                } else {
-                    Toast.makeText(MainActivity.this, "Ative o toggle para preencher o texto", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-
-
-        btnTelaLista.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), TelaListaActivity.class);
-                startActivity(intent);
-            }
-        });
-
-
-        toggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    Toast.makeText(MainActivity.this, "O Toggle está ATIVADO", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(MainActivity.this, "O Toggle está DESATIVADO", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-
-
-        autoComplete();
-        if (txtAutoComplete.getText() != null) {
-            btnOk.setOnClickListener(new View.OnClickListener() {
-                @SuppressLint("SetTextI18n")
-                @Override
-                public void onClick(View v) {
-                    tvNome.setText("Seja Bem Vindo "+txtAutoComplete.getText() + "!");
-                }
-            });
-        }
-
-
-        btnBandas.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                PopupMenu popupMenu = new PopupMenu(MainActivity.this, btnBandas);
-                popupMenu.getMenuInflater().inflate(R.menu.menu_bandas, popupMenu.getMenu());
-                popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-                    @Override
-                    public boolean onMenuItemClick(MenuItem item) {
-                        if (item.getItemId() == R.id.banda1) {
-                            Intent intent = new Intent(MainActivity.this, HistoricoNirvanaActivity.class);
-                            startActivity(intent);
-                            //nirvana
-                        } else if (item.getItemId() == R.id.banda2) {
-                            Intent intent = new Intent(MainActivity.this, HistoricoGunsActivity.class);
-                            startActivity(intent);
-                            //guns
-                        } else if (item.getItemId() == R.id.banda3) {
-                            Intent intent = new Intent(MainActivity.this, HistoricoPearlActivity.class);
-                            startActivity(intent);
-                            //pearl jam
-                        }
-                        return true;
-                    }
-                });
-                popupMenu.show();
-            }
-        });
 
 
     }
-    private void autoComplete() {
-        String lista[] = {"Ana", "Matheus", "Vinicius", "Wemerson", "Marcio",
-                "Marcelo", "Bruna", "Babu", "Arthur", "Maxwell", "Naruto"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, lista);
-        txtAutoComplete.setThreshold(1);
-        txtAutoComplete.setAdapter(adapter);
-    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu, menu);
         return true;
     }
+
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == R.id.sobreNos) {
-            Toast.makeText(this, "Sobre Nos", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(MainActivity.this, SobreNosActivity.class);
-            startActivity(intent);
-        } else if (item.getItemId() == R.id.modoEscuro) {
-            Toast.makeText(this, "Modo Escuro Ativado", Toast.LENGTH_SHORT).show();
-            RelativeLayout relativeLayout = findViewById(R.id.layoutLista);
-            relativeLayout.setBackgroundColor(R.drawable.fundomusica);
+        if (item.getItemId() == R.id.configuracoes) {
+            Toast.makeText(this, "Configurações ainda não está disponivel", Toast.LENGTH_SHORT).show();
+        } else if (item.getItemId() == R.id.modoClaro) {
+            Toast.makeText(this, "Modo Claro ainda não está disponivel", Toast.LENGTH_SHORT).show();
+        } else if(item.getItemId() == R.id.vWeb){
+            Toast.makeText(this, "Versão web ainda não disponivel", Toast.LENGTH_SHORT).show();
+        }else if(item.getItemId() == R.id.feedback){
+            Toast.makeText(this, "Feedback ainda não está indiponivel", Toast.LENGTH_SHORT).show();
         }
         return super.onOptionsItemSelected(item);
     }
-
 
 
 }

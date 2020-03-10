@@ -26,11 +26,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".views.MainActivity" />
         </activity>
-        <activity android:name=".views.SobreNosActivity" android:label="Sobre Nos">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".views.TelaListaActivity" />
-        </activity>
         <activity
             android:name=".views.TelaListaActivity" android:label="Lista de Musicas">
             <meta-data
