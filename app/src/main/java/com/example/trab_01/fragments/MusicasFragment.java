@@ -1,16 +1,8 @@
 package com.example.trab_01.fragments;
 
 
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.ActionBar;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,10 +16,13 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
 import com.example.trab_01.R;
 import com.example.trab_01.adapters.MusicaAdapter;
 import com.example.trab_01.models.Musica;
-import com.example.trab_01.views.TelaListaActivity;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -71,27 +66,25 @@ public class MusicasFragment extends Fragment {
     }
 
 
-
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
         mediaPlayer = view.findViewById(R.id.mediaPlayer);
-        btnVoltarMedia =  view.findViewById(R.id.btnVoltar);
+        btnVoltarMedia = view.findViewById(R.id.btnVoltar);
 
         t = new Timer();
-        btnAnterior =  view.findViewById(R.id.btnAnterior);
-        btnPlay =  view.findViewById(R.id.btnPlay);
-        btnProximo =  view.findViewById(R.id.btnProximo);
-        btnPause =  view.findViewById(R.id.btnPause);
+        btnAnterior = view.findViewById(R.id.btnAnterior);
+        btnPlay = view.findViewById(R.id.btnPlay);
+        btnProximo = view.findViewById(R.id.btnProximo);
+        btnPause = view.findViewById(R.id.btnPause);
         myMusic = MediaPlayer.create(getContext(), R.raw.silver);
-        spinner =  view.findViewById(R.id.spinner);
-        tvTitulo =  view.findViewById(R.id.tituloMusica);
+        spinner = view.findViewById(R.id.spinner);
+        tvTitulo = view.findViewById(R.id.tituloMusica);
         progressBar = view.findViewById(R.id.progressBar);
 
 
-
-        final ListView lista =  view.findViewById(R.id.listView);
+        final ListView lista = view.findViewById(R.id.listView);
         Musica m1 = new Musica("Silver", "Nirvana", "Nevermind", "2:11", R.raw.silver);
         Musica m2 = new Musica("Come As You Are", "Nirvana", "Nevermind", "3:45", R.raw.come);
         Musica m3 = new Musica("About A Girl", "Nirvana", "Nevermind", "2:49", R.raw.about);
@@ -136,7 +129,7 @@ public class MusicasFragment extends Fragment {
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if(mediaPlayer.getVisibility() == View.INVISIBLE) {
+                if (mediaPlayer.getVisibility() == View.INVISIBLE) {
                     switch (musicas.get(position).getNome()) {
                         case "Smells Like Teen Spirit":
                             myMusic.stop();
@@ -247,9 +240,9 @@ public class MusicasFragment extends Fragment {
         btnPlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (myMusic == null){
+                if (myMusic == null) {
                     Toast.makeText(getContext(), "Escolha uma musica", Toast.LENGTH_SHORT).show();
-                }else{
+                } else {
                     myMusic.start();
                 }
             }
@@ -285,6 +278,7 @@ public class MusicasFragment extends Fragment {
             }
         });
     }
+
     private void OrdenarSpinner(final ArrayAdapter<Musica> adapter) {
         final String[] list_of_order = {
                 "Aleatório",
@@ -346,6 +340,7 @@ public class MusicasFragment extends Fragment {
 
 
     }
+
     private void proximaMusica() {
         myMusic.stop();
         cont = 0;
@@ -358,6 +353,7 @@ public class MusicasFragment extends Fragment {
         myMusic = MediaPlayer.create(getContext(), musicas.get(positionLastMusic).id);
         myMusic.start();
     }
+
     private void prog() {
         int periodo = myMusic.getDuration() / 170;
         int delay = 0;
@@ -368,7 +364,7 @@ public class MusicasFragment extends Fragment {
                 if (myMusic.isPlaying()) {
                     cont++;
                 }
-                if(cont == 100){
+                if (cont == 100) {
                     myMusic.stop();
                 }
             }
