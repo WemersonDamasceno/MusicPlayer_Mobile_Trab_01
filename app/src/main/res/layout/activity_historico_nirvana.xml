@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fundo"
+    tools:context=".views.views_bandas.HistoricoNirvanaActivity">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="Nirvana"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:textSize="30sp"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="350dp"
+        android:layout_gravity="center"
+        android:layout_height="250dp"
+        android:src="@drawable/htnirvana"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="BIOGRAFIA"
+        android:textSize="25sp"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:gravity="center"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:gravity="center"
+        android:padding="10dp"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:text="Na virada dos anos 80, a banda formada na cidade de Aberdeen, em 1988, por Kurt Cobain (vocal – guitarra), Krist Novoselic (baixo) e, posteriormente,  Dave Grohl (bateria), foi o fenômeno do movimento grunge, como ficou conhecido. O primeiro registro do Nirvana, na Sub Pop, foi um single com duas músicas: Love Buzz e Big Cheese. E logo veio 'Bleach'."/>
+
+
+
+
+
+
+
+</LinearLayout>

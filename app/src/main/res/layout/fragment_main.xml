@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.MainFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/fundo"
+        tools:ignore="UselessParent">
+
+        <TextView
+            android:id="@+id/idText"
+            android:layout_centerHorizontal="true"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/aperte_no_botao_para_ver_o_toast"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+
+
+        <EditText
+            android:id="@+id/edText"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/idText"
+            android:layout_centerHorizontal="true"
+            android:ems="15"
+            android:gravity="center"
+            android:background="#FAFAFA"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/digite_o_novo_texto">
+        </EditText>
+
+
+        <Button
+            android:id="@+id/btnConfimar"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button_redondo"
+            android:layout_below="@+id/edText"
+            android:ems="7"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/aperte_aqui">
+        </Button>
+
+        <ToggleButton
+            android:id="@+id/btnToggle"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/btnConfimar"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </ToggleButton>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/editar"
+            android:textSize="25sp"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:layout_toStartOf="@+id/btnToggle"
+            android:layout_below="@+id/btnConfimar"
+            android:layout_marginTop="25dp"/>
+
+
+
+        <AutoCompleteTextView
+            android:id="@+id/txtAutoComplete"
+            android:layout_below="@+id/btnToggle"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_marginTop="20dp"
+            android:ems="13"
+            android:background="#FAFAFA"
+            android:hint="@string/digite_seu_nome"/>
+
+        <TextView
+            android:id="@+id/tvSejaBemVindo"
+            android:layout_below="@+id/txtAutoComplete"
+            android:layout_width="wrap_content"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text=""/>
+
+
+        <Button
+            android:id="@+id/btnOk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btnToggle"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginBottom="2dp"
+            android:layout_toEndOf="@+id/txtAutoComplete"
+            android:background="@drawable/button_redondo"
+            android:text="@string/ok" />
+
+        <TextView
+            android:id="@+id/txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvSejaBemVindo"
+            android:text="@string/saiba_mais_sobre_as_banda_de_rock"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"/>
+        <Button
+            android:id="@+id/btnBandas"
+            android:layout_below="@+id/txt"
+            android:layout_marginTop="10dp"
+            android:ems="7"
+            android:background="@drawable/button_redondo"
+            android:layout_marginStart="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bandas"/>
+
+
+        <TextView
+            android:id="@+id/oqueAchou"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:text="@string/o_que_achou_das_musicas"
+            android:layout_below="@+id/btnBandas"/>
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_below="@+id/oqueAchou"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/radioButton1"
+                android:textColor="#FFFFFF"
+                android:layout_width="match_parent"
+                android:background="#6D6A6A"
+                android:layout_height="wrap_content"
+                android:text="@string/timas" />
+
+            <RadioButton
+                android:id="@+id/radioButton2"
+                android:textColor="#FFFFFF"
+                android:layout_width="match_parent"
+                android:background="#FF6D6A6A"
+                android:layout_marginTop="5dp"
+                android:layout_height="wrap_content"
+                android:text="@string/boas"/>
+
+            <RadioButton
+                android:id="@+id/radioButton3"
+                android:textColor="#FFFFFF"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:background="#FF6D6A6A"
+                android:layout_height="wrap_content"
+                android:text="@string/ruins" />
+        </RadioGroup>
+
+
+    </RelativeLayout>
+
+
+
+
+
+
+</FrameLayout>

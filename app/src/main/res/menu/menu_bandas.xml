@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item android:id="@+id/banda1"
+    android:title="@string/nirvana"/>
+<item android:id="@+id/banda2"
+    android:title="@string/guns_n_roses"/>
+<item android:id="@+id/banda3"
+    android:title="@string/pearl_jam"/>
+</menu>

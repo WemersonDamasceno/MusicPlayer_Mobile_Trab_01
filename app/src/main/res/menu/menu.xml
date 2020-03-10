@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/modoClaro"
+        android:title="@string/modo_noturno"/>
+    <item android:id="@+id/vWeb"
+        android:title="@string/vWeb"/>
+    <item android:id="@+id/configuracoes"
+        android:title="@string/configuracoes"/>
+    <item android:id="@+id/feedback"
+        android:title="@string/feedback"/>
+</menu>
