@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
 
         //teste para mudar a cor do actionBar
         ActionBar bar = getSupportActionBar();
-        bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#232324")));
+        bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#FF6D6A6A")));
 
 
 
