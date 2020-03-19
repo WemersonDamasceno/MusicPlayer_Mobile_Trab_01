@@ -19,7 +19,7 @@ Olhando os requisitos do trabalho eu decidir fazer um player de musica que atend
 2. Para as fotos circulares estou usando uma biblioteca própria para isso, está nas dependencias do gradle.
 3. Mais componentes básicos do Android
 
-
+Então, é isso, espero que gostem :)
 
 
 
