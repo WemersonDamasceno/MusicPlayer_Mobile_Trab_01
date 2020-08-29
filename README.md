@@ -1,3 +1,4 @@
+<html>
 <h1>Music Player</h1>
     <p>Esse repositorio é para o trabalho 01 da disciplina de Desenvolvimento de Dispositiveis Moveis, no qual o professor pedia 
         para usar alguns componentes do Android.
@@ -22,3 +23,4 @@
         <li>ProgressBar</li>
         <li>CircleImage</li>
     </ul>
+</html>
