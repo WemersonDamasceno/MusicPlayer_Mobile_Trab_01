@@ -16,7 +16,7 @@
     </ul>   
     <h2>Print da tela das musicas</h2>
     <img width="350px" height="550px" src="https://user-images.githubusercontent.com/37156004/77071857-7c207180-69cb-11ea-9ca1-3a0a2c8f026a.jpeg">
-    <h3>Nesse app foi implementado 3 telas para a apresentação de alguns componentes do Android</h3>
+    <h3>Nesse tela foi implementado os seguintes componentes</h3>
     <ul>
         <li>Spinner</li>
         <li>ListView</li>
